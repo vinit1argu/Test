@@ -6,6 +6,7 @@ table {
     border-collapse: collapse; 
     width: 100%; 
     border: 1px solid #dddddd; 
+    /* height: 2em; */
   }
   
  
@@ -20,6 +21,7 @@ table {
     border: 1px solid #dddddd; 
     text-align: left; 
     padding: 8px; 
+    height: 50px;
   }
 
 .action{
@@ -34,4 +36,10 @@ table {
   margin-top: 40px;
   margin-bottom: 30px;
 }
+
+.action:hover{
+  font-size:1.5em;
+  transition: .25s ease-out;
+}
+
   
