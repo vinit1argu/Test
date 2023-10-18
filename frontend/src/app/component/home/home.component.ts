@@ -24,13 +24,17 @@ export class HomeComponent implements OnInit {
 
     fetchData() {
       this.dataService.getPosts().subscribe(
-        (response) => {
-          console.log("DATA = ", response);
+        // (response) => {
+        //   console.log("DATA = ", response);
           
-          this.people = response;
-        },
-        (error) => {
-          console.error('Error fetching data:', error);
+        //   this.people = response;
+        // },
+        // (error) => {
+        //   console.error('Error fetching data:', error);
+        // }
+        {
+          next:response=>{this.people= response;},
+          error:error=>{console.error('Error fetching data:', error)}
         }
       )
     }

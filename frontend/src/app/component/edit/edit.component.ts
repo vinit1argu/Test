@@ -30,13 +30,18 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.id=params['id'];
-      this.dataService.getDataForEdit(this.id).subscribe((response) => {
-        this.item = response;
-        // console.log(response);
-      },
-      (error)=>{
-        console.error('Error fetching data by ID:', error);
-      })
+      this.dataService.getDataForEdit(this.id).subscribe(
+      //   (response) => {
+      //   this.item = response;
+      // },
+      // (error)=>{
+      //   console.error('Error fetching data by ID:', error);
+      // }
+     { 
+      next:response =>{this.item = response},
+      error:error =>{console.error('Error fetching data by ID:', error);}
+     }
+      )
     })
 
 
