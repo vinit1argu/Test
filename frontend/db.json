@@ -71,6 +71,22 @@
       "role": 50,
       "gender": "male",
       "id": 9
+    },
+    {
+      "name": "Ram",
+      "address": "Ayodhya",
+      "dob": "2023-01-20",
+      "role": 1,
+      "gender": "Male",
+      "id": 10
+    },
+    {
+      "name": ".jhfmdgnbfdv",
+      "address": "sdfghj",
+      "dob": "2023-10-13",
+      "role": 1,
+      "gender": "Male",
+      "id": 11
     }
   ]
 }

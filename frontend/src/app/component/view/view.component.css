@@ -1,13 +1,6 @@
-/* Custom CSS styles for the view component */
+/* style for the view component */
 
 div {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #d1c4c4; */
     background-image: linear-gradient(#FFDEE9,#B5FFFC);
     height: 100vh;
     width: 100vw;
@@ -36,7 +29,7 @@ li strong {
     font-weight: bold;
     color: #333; 
 }
-/* Stylish border for the data details */
+/* Style for data details */
 ul {
     border: 2px solid #858e97;
     padding: 20px;
@@ -52,12 +45,12 @@ ul {
 }
 /* Background colors for even and odd list items */
 li:nth-child(even) {
-    background-color: #f0f0f0; /* Light gray */
+    background-color: #f0f0f0; 
 }
 li:nth-child(odd) {
-    background-color: #f9f9f9; /* Lighter gray */
+    background-color: #f9f9f9; 
 }
-/* Responsive styling for smaller screens */
+/* style for smaller screens */
 @media (max-width: 768px) {
 div {
 width: 90%;

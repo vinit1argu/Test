@@ -1,8 +1,7 @@
 <div class="html">
   <h4 id="registration">Your Detail</h4>
-  <!-- <div class="form"> -->
-
   <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <!-- Input field for Name -->
     <div>
       <label for="name">Name:</label>
       <input
@@ -26,6 +25,8 @@
         Name is required.
       </div>
     </div>
+
+    <!-- Input field for Address -->
     <div>
       <label for="address">Address:</label>
       <input
@@ -50,11 +51,13 @@
       </div>
     </div>
 
+    <!-- Input field for DOB -->
     <div>
       <label for="DOB">DOB:</label>
       <input type="date" id="DOB" placeholder="DOB..." formControlName="DOB" />
     </div>
 
+    <!-- Input field for Role -->
     <div>
       <label for="role">Role:</label>
       <input
@@ -79,9 +82,10 @@
       </div>
     </div>
 
-    <div class="jh">
+    <!-- Input field for Gender -->
+    <div class="gender-section">
       <label>Gender:</label>
-      <div class="jh2" *ngFor="let gender of genders">
+      <div class="gender-option" *ngFor="let gender of genders">
         <label>
           <input
             type="radio"

@@ -51,8 +51,6 @@ input.istouched{
   
 }
 
-
-
 input[type=text],[type=email],[type=number],[type=textarea],[type=date], select {
   width: 100%;
   padding: 12px 20px;
@@ -71,14 +69,13 @@ input[type=text],[type=email],[type=number],[type=textarea],[type=date], select 
   margin: 30px auto;
 }
 
-
-.jh{
+.gender-section{
   display: flex;
  padding-right: 10px;
  padding: 10px;
 }
 
-.jh2 {
+.gender-option {
   margin: auto;
   text-align: center;
 }

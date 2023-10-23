@@ -33,25 +33,10 @@ export class UserFormComponent {
     if(this.userForm.valid){
       const userData = this.userForm.value;
       console.log(userData);
-
-
-      // this.http.post('http://localhost:3000/api/users', userData, {
-      //   headers: new HttpHeaders()
-      // }).subscribe((res) => {
-      //   console.log(res);
-        
-      //   // this.router.navigate(['/']);
-      // },
-      // (err) => {
-      //   console.log(err);
-      // });
-
-
+      // navigating to home page
       this.dataService.postData(userData)
         .subscribe(res => {
-          // console.log("dgjlkadjsjg = ", res);
-
-          this.router.navigate(['/']);
+        this.router.navigate(['/']);
         })
     }
   }

@@ -13,22 +13,20 @@ export class EditComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
   
   ngOnInit(): void {
-    // Initialize the form group with default values (you can also populate it with data from a service)
+    // Initializing the form variable
     this.editForm = this.fb.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
       DOB: ['', Validators.required],
       role: ['', Validators.required],
       gender: ['', Validators.required], 
-      // Add more form controls as needed
     });
   }
   onSubmit() {
     if (this.editForm.valid) {
-      // Process the form data here, e.g., send it to a service
+      // printing the user details.
       console.log('Form submitted:', this.editForm.value);
       console.log(this.editForm.value.name);
     }
-  }
-  
+  } 
 }
