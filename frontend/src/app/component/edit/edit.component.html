@@ -6,7 +6,7 @@
       <label for="name">Name:</label>
       <input
         type="text"
-        id="name"
+        id="name"[(ngModel)]="items.name"
         placeholder="Your name.."
         formControlName="name"
         [ngClass]="{
@@ -32,6 +32,7 @@
       <input
         type="text"
         id="address"
+        [(ngModel)]="items.address"
         placeholder="Address..."
         formControlName="address"
         [ngClass]="{
@@ -53,16 +54,17 @@
 
     <!-- Input field for DOB -->
     <div>
-      <label for="DOB">DOB:</label>
-      <input type="date" id="DOB" placeholder="DOB..." formControlName="DOB" />
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" [(ngModel)]="items.dob" placeholder="DOB..." formControlName="dob" />
     </div>
 
     <!-- Input field for Role -->
     <div>
       <label for="role">Role:</label>
       <input
-        type="number"
+        type="string"
         id="role"
+        [(ngModel)]="items.role"
         placeholder="Your Role.."
         formControlName="role"
         [ngClass]="{
@@ -91,6 +93,7 @@
             type="radio"
             [value]="gender"
             formControlName="gender"
+            [(ngModel)]="items.gender"
             [ngClass]="{
               valid: editForm.get('address')?.valid,
               invalid:

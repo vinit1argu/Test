@@ -7,7 +7,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'edit' ,component:EditComponent},
+  {path:'edit/:id' ,component:EditComponent},
   {path:'view/:id' , component:ViewComponent},
   {path:'form', component: UserFormComponent}
 ];

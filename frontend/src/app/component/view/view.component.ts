@@ -24,11 +24,4 @@ export class ViewComponent implements OnInit {
 
 
   }
-  // ngOnInit(): void {
-  //   const id = +this.route.snapshot.paramMap.get('id'); // Get the ID from the route
-
-  //   this.dataService.getDataById(id).subscribe(result => {
-  //     this.data = result;
-  //   });
-  
 }
