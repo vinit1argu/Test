@@ -1,3 +1,4 @@
+/* Style for table */
 .container {
   min-height: 100vh;
 }
@@ -20,6 +21,7 @@ table td {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
+  height: 50px;
 }
 
 .action {
@@ -47,4 +49,10 @@ h1 {
   justify-content: flex-end;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+/* style for edit and view icon */
+.action:hover {
+  font-size: 1.5em;
+  transition: .25s ease-out;
 }
