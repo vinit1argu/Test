@@ -1,0 +1,58 @@
+/* Style for table */
+.container {
+  min-height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #dddddd;
+}
+
+
+table th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+}
+
+
+table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  height: 50px;
+}
+
+.action {
+  margin-right: 20px;
+}
+
+.act {
+  width: 200px;
+}
+
+.bn {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Style for add user button */
+h1 {
+  font-family: auto;
+  font-size: 30px;
+  display: contents;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/* style for edit and view icon */
+.action:hover {
+  font-size: 1.5em;
+  transition: .25s ease-out;
+}
