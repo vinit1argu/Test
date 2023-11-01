@@ -7,13 +7,13 @@ const userSchema = new mongoose.Schema({
     address: {
         type: String
     },
-    date:{
-        type: String
-    },
     gender:{
         type: String
     },
     role:{
+        type: String
+    },
+    dob:{
         type: String
     }
 

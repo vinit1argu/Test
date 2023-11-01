@@ -11,6 +11,7 @@ import { DataService } from 'src/app/data.service';
 export class EditComponent implements OnInit {
   editForm!: FormGroup;
   items: any = {};
+  id:string="";
   genders: string[] = ['Male', 'Female', 'Other'];
 
   constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService, private fb: FormBuilder) { }
@@ -26,9 +27,9 @@ export class EditComponent implements OnInit {
     });
 
     this.route.params.subscribe((params)=>{
-      const id = +params['id'];
-      console.log(id);
-      this.dataService.getDataForEdit(id).subscribe(result => {
+      this.id = params['id'];
+      // console.log(id);
+      this.dataService.getDataForEdit(this.id).subscribe(result => {
         this.items =result;  
       });
       
@@ -41,7 +42,7 @@ export class EditComponent implements OnInit {
       console.log(userData);
       
       // navigating to home page
-      this.dataService.updateData(userData,this.items.id)
+      this.dataService.updateData(userData,this.items._id)
         .subscribe(res => {
         this.router.navigate(['/']);
         })
