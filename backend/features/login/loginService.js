@@ -6,6 +6,9 @@ const loginRepository = require("./loginRepository");
 // JWT secret key
 const secretKey = "test-key";
 
+// array of already used token
+const tokenBlacklist = [];
+
 const loginService = {
   // register new user
   async register({ username, password }, res) {
@@ -98,6 +101,43 @@ const loginService = {
       );
       // respond with new access token and expiry time
       res.status(200).json({ accessToken, access_token_expiration });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
+
+  // logout the user
+  async logout(req, res) {
+    try {
+      // console.log(req);
+      const tokenToInvalidate = req.accessToken;
+
+      // checking token is there or not
+      if (!tokenToInvalidate) {
+        return res.status(400).json({ message: 'Token to invalidate is missing' });
+      }
+
+      let decodedToken;
+      // verifying the token
+      try {
+        decodedToken = jwt.verify(tokenToInvalidate, secretKey);
+      } catch (err) {
+        return res.status(401).json({ message: 'Invalid token' });
+      }
+
+      // checking, token is expired or not 
+      if (decodedToken.exp <= Date.now() / 1000) {
+        return res.status(401).json({ message: 'Token has expired' });
+      }
+      // checking token is already used or not.
+      if (tokenBlacklist.includes(tokenToInvalidate)) {
+        return res.status(401).json({ message: 'Token is already invalidated' });
+      }
+
+      // adding the current token to tokenBlacklist. 
+      tokenBlacklist.push(tokenToInvalidate);
+
+      res.status(200).json({ message: 'Logged out successfully' });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }

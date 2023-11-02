@@ -1,5 +1,11 @@
 const loginService = require('./loginService');
 
+// logout
+// const jwt = require('jsonwebtoken');
+
+// const secretKey = 'test-key';
+
+
 const loginController = {
 
   protectedRoute: (req, res) => {
@@ -22,6 +28,14 @@ const loginController = {
     }
   },
   
+  // logout
+  async logout(req, res) {
+    try {
+      await loginService.logout(req.body, res);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
   // Refresh access token
   async refreshToken(req, res) {
     try {
@@ -30,6 +44,9 @@ const loginController = {
       res.status(500).json({ error: err.message });
     }
   },
+
+
+
 
   // view the registered users
   async getUsers(req, res) {
