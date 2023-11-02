@@ -1,17 +1,11 @@
 const loginService = require('./loginService');
 
-// logout
-// const jwt = require('jsonwebtoken');
-
-// const secretKey = 'test-key';
-
-
 const loginController = {
-
+  // Protected route
   protectedRoute: (req, res) => {
     res.json({ message: 'This is a protected route', user: req.user });
   },
-    // Route to register a new user
+  // Route to register a new user
   async register(req, res) {
     try {
       await loginService.register(req.body, res);
@@ -44,9 +38,6 @@ const loginController = {
       res.status(500).json({ error: err.message });
     }
   },
-
-
-
 
   // view the registered users
   async getUsers(req, res) {
