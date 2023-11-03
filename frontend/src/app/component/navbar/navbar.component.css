@@ -6,7 +6,7 @@ padding-left: 20px;
 .ch{
     background-color: #f2f2f2;
     /* background-color: rgba(0, 234, 255, 0.529); */
-    margin-top: 2px;
+    /* margin-top: -22px; */
     margin-left: 3px;
     margin-right: 3px;
     border: 1px solid #dddddd; 
@@ -24,7 +24,7 @@ svg{
 .hg:hover{
     cursor: pointer;
 }
-/* .navbar-expand-lg navbar-light py-4 ch {
-    padding-bottom: 100px;
-    margin-bottom: 10px;
-} */
+.py-4{
+    padding-top: 0.5rem!important;
+    padding-bottom: 0.5rem!important;
+}

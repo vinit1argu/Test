@@ -48,14 +48,14 @@ const loginService = {
         return res.status(401).json({ message: "Wrong password entered." });
       }
       // generate access token
-      const access_token_expiration = "30m"; // access token expires in 30 minutes
+      const access_token_expiration = "10m"; // access token expires in 30 minutes
       const accessToken = jwt.sign(
         { userId: user._id, username: user.username },
         secretKey,
         { expiresIn: access_token_expiration }
       );
       // generate refresh token
-      const refresh_token_expiration = "1h"; // refresh token expires in  1 hour
+      const refresh_token_expiration = "30m"; // refresh token expires in  1 hour
       const refreshToken = jwt.sign(
         { userId: user._id, username: user.username },
         secretKey,
@@ -93,7 +93,7 @@ const loginService = {
         return res.status(401).json({ message: "User not found" });
       }
       // generating new access token
-      const access_token_expiration = "30m"; // access token expires in 30 minutes
+      const access_token_expiration = "10m"; // access token expires in 30 minutes
       const accessToken = jwt.sign(
         { userId: user._id, username: user.username },
         secretKey,
@@ -137,6 +137,12 @@ const loginService = {
       // adding the current token to tokenBlacklist. 
       tokenBlacklist.push(tokenToInvalidate);
 
+      // // for refresh token
+      // const refresh_token = req.refreshToken;
+      // console.log(refresh_token);
+      // if(refresh_token){
+      //   tokenBlacklist.push(refresh_token);
+      // }
       res.status(200).json({ message: 'Logged out successfully' });
     } catch (err) {
       res.status(500).json({ error: err.message });
