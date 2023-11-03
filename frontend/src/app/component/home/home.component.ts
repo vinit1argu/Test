@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class HomeComponent  implements OnInit{
 
   people: any[] = [];
-
+  
   constructor(private dataService: DataService){}
   ngOnInit(): void{
     this.dataService.getPosts().subscribe((data) => {

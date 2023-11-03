@@ -21,7 +21,7 @@ form {
 
 label {
   font-weight: bold;
-  font-family: system-ui;
+  font-family: cursive;
   font-size: 20px;
 }
 
@@ -105,6 +105,6 @@ label input[type="radio"] {
 
 #registration {
   font-size: 26px;
-  font-family: monospace;
+  font-family: cursive;
   font-weight: bold;
 }

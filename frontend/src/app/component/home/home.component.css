@@ -37,6 +37,10 @@ table td {
   margin-bottom: 30px;
 }
 
+.homeBg {
+  background-image: linear-gradient(#FFDEE9, #B5FFFC);
+}
+
 /* Style for add user button */
 h1 {
   font-family: auto;
@@ -47,7 +51,7 @@ h1 {
 .button-container {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  /* margin-top: 1px; */
   margin-right: 10px;
 }
 
@@ -55,4 +59,8 @@ h1 {
 .action:hover {
   font-size: 1.5em;
   transition: .25s ease-out;
+}
+/* adjusting the width of footer */
+.container-fluid{
+  padding: 0px 0px !important;
 }
