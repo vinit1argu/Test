@@ -6,39 +6,40 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
+  
   private apiUrl = 'http://localhost:3000';
-  private baseUrl = 'http://localhost:3000/people';
   
 
   constructor(private http:HttpClient) { }
 
   getPosts(): Observable<any[]>{
-    return this.http.get<any[]>(`${this.apiUrl}/people`);
+    return this.http.get<any[]>(`${this.apiUrl}/get`);
   }
 
   // For view the data 
-  getDataById(id: number): Observable<any> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get(url);
+  getDataById(id:string): Observable<any> {
+        return this.http.get<any>(`${this.apiUrl}/get/${id}`);
   }
+
   // adding the user details in db
   postData(data: any) {
     return this.http.post<any>(
-      this.baseUrl ,
+      // this.apiUrl ,
+      `${this.apiUrl}/post`,
       data
     );
   }
 
   // Viewing the user details in update form 
-  getDataForEdit(id:number):Observable<any>{
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.get(url);
+  getDataForEdit(id:string):Observable<any>{
+    const url = `${this.apiUrl}/get/${id}`;
+    return this.http.get<any>(url);
   }
 
   // Updating the user details
-  updateData(updateData: any,id: number): Observable<any>{
+  updateData(updateData: any,id: string): Observable<any>{
     console.log(updateData);
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${this.apiUrl}/update/${id}`;
     console.log(url);
     
     return this.http.patch(url, updateData);

@@ -36,7 +36,7 @@ export class UserFormComponent {
       // navigating to home page
       this.dataService.postData(userData)
         .subscribe(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
         })
     }
   }
