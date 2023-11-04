@@ -9,15 +9,15 @@ import { DataService } from 'src/app/data.service';
 })
 export class ViewComponent implements OnInit {
   data: any;
+  id:string ="";
 
   constructor(private route: ActivatedRoute, private dataService: DataService){}
 
   ngOnInit(): void {
 
     this.route.params.subscribe((params)=>{
-      const id = +params['id'];
-      console.log(id);
-      this.dataService.getDataById(id).subscribe(result => {
+      this.id = params['id'];
+      this.dataService.getDataById(this.id).subscribe(result => {
         this.data =result;
       });
     })

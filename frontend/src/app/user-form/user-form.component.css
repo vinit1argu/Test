@@ -48,7 +48,6 @@ button:disabled {
 }
 input.istouched{
   border: red 1px solid;
-  
 }
 
 input[type=text],[type=email],[type=number],[type=textarea],[type=date], select {
