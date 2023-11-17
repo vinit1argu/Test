@@ -31,9 +31,16 @@ export class EditComponent implements OnInit {
       // console.log(id);
       this.dataService.getDataForEdit(this.id).subscribe(result => {
         this.items =result;  
+
+          // set max date for dob to current date
+          const currentDate = new Date().toISOString().split('T')[0];
+         
+          const dobInput = document.getElementById('dob') as HTMLInputElement;
+          if(dobInput){
+            dobInput.setAttribute('max', currentDate)
+          }
       });
-      
-    })
+    });
   }
 
   onSubmit(){

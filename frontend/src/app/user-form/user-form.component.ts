@@ -1,5 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
@@ -9,17 +8,18 @@ import { DataService } from '../data.service';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent {
-  userForm: FormGroup;
+export class UserFormComponent implements OnInit{
+  userForm!: FormGroup;
   genders: string[] = ['Male', 'Female', 'Other'];
-
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private router: Router,
     private dataService: DataService
-  ){
+  ){}
+
+  ngOnInit(): void {
+    // Initalizing the form variable
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       address: ['', Validators.required],
@@ -27,6 +27,16 @@ export class UserFormComponent {
       role: ['', Validators.required],
       gender: ['', Validators.required]
     });
+    
+    // set max dob to current date
+    // getting cureent date in the format YYYY-MM-DD
+    const currentDate = new Date().toISOString().split('T')[0];
+
+    // set max date to current date
+    const dobInput = document.getElementById('dob') as HTMLInputElement;
+    if(dobInput){
+      dobInput.setAttribute('max',currentDate);
+    }
   }
 
   onSubmit(){

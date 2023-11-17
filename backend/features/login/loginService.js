@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../../model/loginModel");
+const User_Data = require("../../model/userModel");
 const loginRepository = require("./loginRepository");
 
 // JWT secret key
@@ -61,14 +62,19 @@ const loginService = {
         secretKey,
         { expiresIn: refresh_token_expiration }
       );
+
+      // showing the datas of users.
+      const alldata = await User_Data.find({},'name address');
       // respond with access and refresh token with their expiry time
       res.status(200).json({
         accessToken,
         access_token_expiration,
         refreshToken,
         refresh_token_expiration,
+        alldata // passing the datas of users.
       });
-    } catch (err) {
+    } 
+    catch (err) {
       res.status(500).json({ error: err.message });
     }
   },
