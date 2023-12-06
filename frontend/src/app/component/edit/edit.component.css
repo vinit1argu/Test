@@ -1,4 +1,5 @@
-.html {
+/* Css for edit page */
+.edit-page {
   background-image: linear-gradient(#FFDEE9, #B5FFFC);
   height: 100vh;
   width: 100vw;
@@ -10,13 +11,13 @@
 
 form {
   background-image: linear-gradient(rgb(247, 206, 206), white);
-  /* max-width: 400px; */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
 }
 
 label {
@@ -49,22 +50,18 @@ button:disabled {
 
 input.istouched {
   border: red 1px solid;
-
 }
 
-
-
 input[type=text],
-[type=email],
-[type=number],
-[type=textarea],
-[type=date],
+input[type=email],
+input[type=number],
+input[type=textarea],
+input[type=date],
 select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  /* border: 1px solid #ccc; */
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -74,13 +71,16 @@ select {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 400px;
+  width: 100%;
+  max-width: 650px;
   margin: 30px auto;
 }
 
-
 .gender-section {
+  flex-wrap: wrap;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-right: 10px;
   padding: 10px;
 }
@@ -100,11 +100,38 @@ label input[type="radio"] {
 
 .invalid {
   border: 2px solid red !important;
-
 }
 
-#registration {
+h2 {
   font-size: 26px;
   font-family: cursive;
   font-weight: bold;
+}
+
+.warning {
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 768px) {
+  form,
+  .form,
+  .form-data {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    padding: 8px 16px;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=number],
+  input[type=textarea],
+  input[type=date],
+  select {
+    padding: 10px;
+  }
 }

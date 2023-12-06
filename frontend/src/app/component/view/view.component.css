@@ -1,63 +1,70 @@
 /* style for the view component */
-
-div {
-    background-image: linear-gradient(#FFDEE9,#B5FFFC);
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+.user-details {
+  background-image: linear-gradient(#FFDEE9, #B5FFFC);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
 h1 {
-    font-size: px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #212e3b; /* Blue color for the title */
-    margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: #212e3b;
+  margin-bottom: 15px;
 }
+
 ul {
-    list-style-type: none;
-    padding: 0;
-    
+  list-style-type: none;
+  padding: 0;
 }
+
 li {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 li strong {
-    font-weight: bold;
-    color: #333; 
+  font-weight: bold;
+  color: #333;
 }
+
 /* Style for data details */
 ul {
-    border: 2px solid #858e97;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    height: 400px;
-    width: 600px;
-    display: flex;
-    flex-flow: column;
-    font-size: 24px;
-    font-family: ui-serif;
-    justify-content: space-around;
+  border: 2px solid #858e97;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  max-width: 600px;
+  width: 90%;
+  font-size: 24px;
+  font-family: ui-serif;
+  justify-content: space-around;
 }
+
 /* Background colors for even and odd list items */
 li:nth-child(even) {
-    background-color: #f0f0f0; 
+  background-color: #f0f0f0;
 }
+
 li:nth-child(odd) {
-    background-color: #f9f9f9; 
+  background-color: #f9f9f9;
 }
-/* style for smaller screens */
+
+/* Style for smaller screens */
 @media (max-width: 768px) {
-div {
-width: 90%;
-}
-h1 {
+  .user-details {
+    padding: 20px;
+  }
+
+  h1 {
     font-size: 24px;
     margin-bottom: 15px;
+  }
+
+  ul {
+    max-width: 100%;
+  }
 }
-}
-    

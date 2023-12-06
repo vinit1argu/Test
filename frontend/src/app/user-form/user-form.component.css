@@ -1,22 +1,22 @@
-.user-details{
-  background-image: linear-gradient(#FFDEE9,#B5FFFC);
+.user-details {
+  background-image: linear-gradient(#FFDEE9, #B5FFFC);
   height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
-  background-image: linear-gradient(rgb(247, 206, 206),white);
-  /* max-width: 400px; */
+  background-image: linear-gradient(rgb(247, 206, 206), white);
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
 }
 
 label {
@@ -46,33 +46,42 @@ button:disabled {
   background-color: #9b9fe0ce;
   cursor: not-allowed;
 }
-input.istouched{
+
+input.istouched {
   border: red 1px solid;
-  
 }
 
-input[type=text],[type=email],[type=number],[type=textarea],[type=date], select {
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=textarea],
+input[type=date],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  /* border: 1px solid #ccc; */
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.form, .form-data{
+.form,
+.form-data {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  width: 400px;
+  width: 100%;
+  max-width: 650px;
   margin: 30px auto;
 }
 
-.gender-section{
+.gender-section {
+  flex-wrap: wrap;
   display: flex;
- padding-right: 10px;
- padding: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+  padding: 10px;
 }
 
 .gender-option {
@@ -87,18 +96,41 @@ label input[type="radio"] {
 .valid {
   border: 1px solid #ccc;
 }
+
 .invalid {
   border: 2px solid red !important;
-  
 }
 
-h2{
+h2 {
   font-size: 26px;
   font-family: cursive;
   font-weight: bold;
 }
 
-.warning{
+.warning {
   color: red;
   font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 768px) {
+  form,
+  .form,
+  .form-data {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    padding: 8px 16px;
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=number],
+  input[type=textarea],
+  input[type=date],
+  select {
+    padding: 10px;
+  }
 }
