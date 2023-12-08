@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
   import { HomeComponent } from './component/home/home.component';
 import { EditComponent } from './component/edit/edit.component';
 import { ViewComponent } from './component/view/view.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { UserFormComponent } from './component/user-form/user-form.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},

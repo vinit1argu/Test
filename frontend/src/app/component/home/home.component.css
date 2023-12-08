@@ -1,21 +1,27 @@
+
 /* Style for table */
 .container {
   min-height: 100vh;
+  overflow-x: auto; /* Add horizontal scrollbar if needed */
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
   border: 1px solid #dddddd;
+  white-space: nowrap; /* Prevent text wrapping in cells */
 }
 
+table th, table td {
+  text-overflow: ellipsis; /* Truncate text with ellipsis */
+  overflow: hidden;
+}
 
 table th {
   background-color: #f2f2f2;
   text-align: left;
   padding: 8px;
 }
-
 
 table td {
   border: 1px solid #dddddd;
@@ -51,7 +57,6 @@ h1 {
 .button-container {
   display: flex;
   justify-content: flex-end;
-  /* margin-top: 1px; */
   margin-right: 10px;
 }
 
@@ -60,7 +65,22 @@ h1 {
   font-size: 1.5em;
   transition: .25s ease-out;
 }
+
 /* adjusting the width of footer */
-.container-fluid{
+.container-fluid {
   padding: 0px 0px !important;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  table th, table td {
+    display: inline-block;
+    min-width: 100px; /* Adjust this based on your content */
+  }
 }
