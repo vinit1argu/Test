@@ -2,7 +2,7 @@
 /* Style for table */
 .container {
   min-height: 100vh;
-  overflow-x: auto; /* Add horizontal scrollbar if needed */
+  overflow-x: auto; 
 }
 
 table {
@@ -81,6 +81,6 @@ h1 {
 
   table th, table td {
     display: inline-block;
-    min-width: 100px; /* Adjust this based on your content */
+    min-width: 100px; 
   }
 }
